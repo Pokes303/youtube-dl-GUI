@@ -1,0 +1,13 @@
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\bin\Debug\YT_Downloader_GUI.exe.config
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\bin\Debug\YT_Downloader_GUI.exe
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\bin\Debug\YT_Downloader_GUI.pdb
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\bin\Debug\es\YT_Downloader_GUI.resources.dll
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.Form1.resources
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.HelpForm.resources
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.Properties.Resources.resources
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.HelpForm.es.resources
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.csproj.GenerateResource.cache
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.csproj.CoreCompileInputs.cache
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\es\YT_Downloader_GUI.resources.dll
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.exe
+C:\Users\Jose\source\repos\YT_Downloader_GUI\YT_Downloader_GUI\obj\Debug\YT_Downloader_GUI.pdb
