@@ -42,7 +42,6 @@
             this.Download = new System.Windows.Forms.Button();
             this.DownloadProgressBar = new System.Windows.Forms.ProgressBar();
             this.DownloadingText = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ExportTXTSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.ImportTXTOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.OpenAtEndCheckBox = new System.Windows.Forms.CheckBox();
@@ -50,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.SaveFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.MP3CheckBox = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -123,7 +123,7 @@
             // 
             // ImportTXT
             // 
-            this.ImportTXT.Location = new System.Drawing.Point(12, 198);
+            this.ImportTXT.Location = new System.Drawing.Point(248, 198);
             this.ImportTXT.Name = "ImportTXT";
             this.ImportTXT.Size = new System.Drawing.Size(224, 23);
             this.ImportTXT.TabIndex = 3;
@@ -141,7 +141,7 @@
             // 
             // ExportTXT
             // 
-            this.ExportTXT.Location = new System.Drawing.Point(248, 198);
+            this.ExportTXT.Location = new System.Drawing.Point(12, 198);
             this.ExportTXT.Name = "ExportTXT";
             this.ExportTXT.Size = new System.Drawing.Size(224, 23);
             this.ExportTXT.TabIndex = 3;
@@ -154,7 +154,7 @@
             this.Download.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Download.Location = new System.Drawing.Point(12, 266);
             this.Download.Name = "Download";
-            this.Download.Size = new System.Drawing.Size(368, 46);
+            this.Download.Size = new System.Drawing.Size(363, 46);
             this.Download.TabIndex = 5;
             this.Download.Text = "Descargar";
             this.Download.UseVisualStyleBackColor = true;
@@ -164,17 +164,18 @@
             // 
             this.DownloadProgressBar.Location = new System.Drawing.Point(12, 318);
             this.DownloadProgressBar.Name = "DownloadProgressBar";
-            this.DownloadProgressBar.Size = new System.Drawing.Size(374, 23);
+            this.DownloadProgressBar.Size = new System.Drawing.Size(410, 23);
             this.DownloadProgressBar.TabIndex = 6;
             // 
             // DownloadingText
             // 
             this.DownloadingText.AutoSize = true;
-            this.DownloadingText.Location = new System.Drawing.Point(392, 318);
+            this.DownloadingText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DownloadingText.Location = new System.Drawing.Point(428, 325);
             this.DownloadingText.Name = "DownloadingText";
-            this.DownloadingText.Size = new System.Drawing.Size(58, 26);
+            this.DownloadingText.Size = new System.Drawing.Size(32, 17);
             this.DownloadingText.TabIndex = 8;
-            this.DownloadingText.Text = "Esperando\r\n-/-";
+            this.DownloadingText.Text = "--/--";
             this.DownloadingText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ExportTXTSaveFileDialog
@@ -192,11 +193,11 @@
             this.OpenAtEndCheckBox.AutoSize = true;
             this.OpenAtEndCheckBox.Checked = true;
             this.OpenAtEndCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.OpenAtEndCheckBox.Location = new System.Drawing.Point(386, 266);
+            this.OpenAtEndCheckBox.Location = new System.Drawing.Point(381, 282);
             this.OpenAtEndCheckBox.Name = "OpenAtEndCheckBox";
-            this.OpenAtEndCheckBox.Size = new System.Drawing.Size(86, 30);
+            this.OpenAtEndCheckBox.Size = new System.Drawing.Size(97, 30);
             this.OpenAtEndCheckBox.TabIndex = 9;
-            this.OpenAtEndCheckBox.Text = "Abrir carpeta\r\nal finalizar\r\n";
+            this.OpenAtEndCheckBox.Text = "Abrir carpeta al\r\nfinalizar";
             this.OpenAtEndCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.OpenAtEndCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -227,11 +228,22 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // MP3CheckBox
+            // 
+            this.MP3CheckBox.AutoSize = true;
+            this.MP3CheckBox.Location = new System.Drawing.Point(381, 266);
+            this.MP3CheckBox.Name = "MP3CheckBox";
+            this.MP3CheckBox.Size = new System.Drawing.Size(103, 17);
+            this.MP3CheckBox.TabIndex = 13;
+            this.MP3CheckBox.Text = "Convertir a .mp3";
+            this.MP3CheckBox.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 351);
+            this.Controls.Add(this.MP3CheckBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.SaveTextBox);
@@ -273,7 +285,6 @@
         private System.Windows.Forms.ToolStripMenuItem abrirDirectorioDelProgramaToolStripMenuItem;
         private System.Windows.Forms.ProgressBar DownloadProgressBar;
         private System.Windows.Forms.Label DownloadingText;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.SaveFileDialog ExportTXTSaveFileDialog;
         private System.Windows.Forms.OpenFileDialog ImportTXTOpenFileDialog;
         private System.Windows.Forms.CheckBox OpenAtEndCheckBox;
@@ -281,6 +292,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.FolderBrowserDialog SaveFolderBrowserDialog;
+        private System.Windows.Forms.CheckBox MP3CheckBox;
     }
 }
 

@@ -39,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.VersionLabel = new System.Windows.Forms.Label();
+            this.DeleteLogsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,12 +78,13 @@
             // 
             // LogCheckBox
             // 
+            this.LogCheckBox.AutoCheck = false;
             resources.ApplyResources(this.LogCheckBox, "LogCheckBox");
             this.LogCheckBox.Checked = true;
             this.LogCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.LogCheckBox.Name = "LogCheckBox";
             this.LogCheckBox.UseVisualStyleBackColor = true;
-            this.LogCheckBox.CheckedChanged += new System.EventHandler(this.LogCheckBox_CheckedChanged);
+            this.LogCheckBox.Click += new System.EventHandler(this.LogCheckBox_Click);
             // 
             // label5
             // 
@@ -101,11 +103,19 @@
             resources.ApplyResources(this.VersionLabel, "VersionLabel");
             this.VersionLabel.Name = "VersionLabel";
             // 
+            // DeleteLogsButton
+            // 
+            resources.ApplyResources(this.DeleteLogsButton, "DeleteLogsButton");
+            this.DeleteLogsButton.Name = "DeleteLogsButton";
+            this.DeleteLogsButton.UseVisualStyleBackColor = true;
+            this.DeleteLogsButton.Click += new System.EventHandler(this.DeleteLogsButton_Click);
+            // 
             // HelpForm
             // 
             this.AcceptButton = this.ExitButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DeleteLogsButton);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LogCheckBox);
@@ -134,5 +144,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label VersionLabel;
+        private System.Windows.Forms.Button DeleteLogsButton;
     }
 }

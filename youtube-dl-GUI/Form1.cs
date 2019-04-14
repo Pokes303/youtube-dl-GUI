@@ -11,51 +11,81 @@ namespace YT_Downloader_GUI
 {
     public partial class Form1 : Form
     {
-        StreamWriter sw;
-
-        public string Version = "1.0";
-        public bool SaveToLog = false;//WIP
-
+        public string Version = "1.1";
+        
         private static Color Good = Color.FromArgb(192, 255, 192);
         private static Color Bad = Color.FromArgb(255, 192, 192);
 
         private string OutputPath = Directory.GetCurrentDirectory() + "\\DownloadedVideos\\";
 
+        public readonly bool SaveToLog = !File.Exists(Directory.GetCurrentDirectory() + "\\nologs");
+        public string LogsPath = Directory.GetCurrentDirectory() + "\\logs\\";
+        StreamWriter LogSw;
+        public string CurrentLog = null;
+        public string NoLogsPath = Directory.GetCurrentDirectory() + "\\nologs";
+
         public Form1()
         {
             InitializeComponent();
-            
+
             if (!Directory.Exists(OutputPath))
                 Directory.CreateDirectory(OutputPath);
+
             SaveTextBox.Text = OutputPath;
             if (SaveToLog)
             {
-                if (!Directory.Exists(Directory.GetCurrentDirectory() + "\\logs\\"))
-                    Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\logs\\");
-                sw = new StreamWriter(Directory.GetCurrentDirectory() + "\\logs\\log" + DateTime.Now.ToFileTime() + ".txt");
+                if (!Directory.Exists(LogsPath))
+                    Directory.CreateDirectory(LogsPath);
+                CurrentLog = LogsPath + "log" + DateTime.Now.ToFileTime() + ".txt";
+                LogSw = new StreamWriter(CurrentLog);
             }
+
             Log("#### youtube-dl GUI log ####");
             Log("\r\nStarted at: " + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year + " - " + DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second + "\r\n");
-            
-            while (!File.Exists(Directory.GetCurrentDirectory() + "\\youtube-dl.exe"))
-            {
-                DialogResult dr = MessageBox.Show("No se pudo encontrar el archvo youtube-dl.exe\n\nDescargue el programa de nuevo desde https://github.com/Pokes303/youtube-dl-GUI e inténtelo de nuevo", "Arcivo youtube-dl.exe no encontrado", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                if (dr == DialogResult.Cancel)
-                    Application.Exit();
-            }
+
+            CheckLibs(true);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Log("\r\n\r\n## End ##");
             if (SaveToLog)
-                sw.Close();
+                LogSw.Close();
         }
 
         public void Log(string Text)
         {
             if (SaveToLog)
-                sw.Write(Text);
+                LogSw.Write(Text);
+        }
+
+        public bool CheckLibs(bool CloseIfCancel)
+        {
+            Log("\r\nChecking libs...");
+            while (!File.Exists(Directory.GetCurrentDirectory() + "\\youtube-dl.exe"))
+            {
+                Log("\r\nyoutube-dl library not found. Trying again...");
+                DialogResult dr = MessageBox.Show("No se pudo encontrar el archvo youtube-dl.exe\n\nDescargue el programa de nuevo desde https://github.com/Pokes303/youtube-dl-GUI e inténtelo de nuevo", "Archivo youtube-dl.exe no encontrado", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (dr == DialogResult.Cancel)
+                {
+                    if (CloseIfCancel)
+                        Application.Exit();
+                    return false;
+                }
+            }
+            Log("\r\nyoutube-dl library found!");
+            while (!File.Exists(Directory.GetCurrentDirectory() + "\\ffmpeg.exe"))
+            {
+                DialogResult dr = MessageBox.Show("No se pudo encontrar el archvo ffmpeg.exe\n\nDescargue el programa de nuevo desde https://github.com/Pokes303/youtube-dl-GUI e inténtelo de nuevo", "Archivo ffmpeg.exe no encontrado", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (dr == DialogResult.Cancel)
+                {
+                    if (CloseIfCancel)
+                        Application.Exit();
+                    return false;
+                }
+            }
+            Log("\r\nffmpeg library found!");
+            return true;
         }
 
         private void abrirDirectorioDelProgramaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,9 +100,9 @@ namespace YT_Downloader_GUI
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HelpForm hf = new HelpForm();
+            HelpForm hf = new HelpForm(this);
+            hf.f1 = this;
             hf.ShowDialog();
-            
         }
 
         private void ImportTXT_Click(object sender, EventArgs e)
@@ -136,28 +166,33 @@ namespace YT_Downloader_GUI
 
         private void Download_Click(object sender, EventArgs e)
         {
+            if (!CheckLibs(false))
+                return;
+
             Download.Enabled = false;
             Download.Text = "Descargando...";
             Cursor.Current = Cursors.WaitCursor;
 
             string[] Videos = VideosTextBox.Text.Split('\n');
 
-            Log("\r\nDownloading " + Videos.Length + " videos from YouTube");
+            Log("\r\n\r\nDownloading " + Videos.Length + " videos from YouTube");
+            Log("\r\nConvert videos to .mp3: " + MP3CheckBox.Checked);
 
             DownloadProgressBar.Maximum = Videos.Length * 2;
-            DownloadingText.Text = "Descargando...\n1/" + Videos.Length;
+            DownloadingText.Text = "1/" + Videos.Length;
 
             if (!Directory.Exists(OutputPath))
                 Directory.CreateDirectory(OutputPath);
-
-            string DownloadedVideosInfo = "";
-            int DownloadedVideos = 0;
-
+            
             try
             {
                 using (Process DownloadProcess = new Process())
                 {
+                    string DownloadedVideosInfo = "";
+                    int DownloadedVideos = 0;
+
                     Log("\r\nStarting download process");
+
                     DownloadProcess.StartInfo.UseShellExecute = false;
                     DownloadProcess.StartInfo.CreateNoWindow = true;
                     DownloadProcess.StartInfo.RedirectStandardOutput = true;
@@ -165,47 +200,60 @@ namespace YT_Downloader_GUI
 
                     for (int i = 0; i < Videos.Length; i++)
                     {
+                        Log("\r\nDownloading video " + i + "/" + Videos.Length + "...");
                         DownloadedVideosInfo += "\n\n" + (i + 1) + "/" + Videos.Length + ": ";
+
                         DownloadProcess.StartInfo.Arguments = Videos[i] + " --get-title";
                         DownloadProcess.Start();
                         while (!DownloadProcess.HasExited) { }
+
                         StreamReader sr = DownloadProcess.StandardOutput;
                         string Title = sr.ReadLine();
+                        sr.Close();
+
                         DownloadProgressBar.Value++;
-                        MessageBox.Show("_" + Title + "_");
+
                         if (Title == null)
                         {
+                            Log("\r\n[ERROR] Video " + (i + 1) + "/" + Videos.Length + " was not found. URL: " + Videos[i]);
                             DownloadedVideosInfo += "VÍDEO NO DISPONIBLE\n   URL: " + Videos[i];
                             DownloadProgressBar.Value++;
                             continue;
                         }
-                        Log("\r\nVideo " + (i + 1) + "/" + Videos.Length + " title: " + Title);
-                        DownloadProcess.StartInfo.Arguments = Videos[i] + " -f mp4 -o \"" + OutputPath + Title + ".mp4\"";
+
+                        Log("\r\nVideo " + (i + 1) + "/" + Videos.Length + " was found! Title: " + Title + ", URL: " + Videos[i]);
+
+                        if (!MP3CheckBox.Checked)
+                            DownloadProcess.StartInfo.Arguments = Videos[i] + " -f mp4 -o \"" + OutputPath + Title + ".mp4\"";
+                        else
+                            DownloadProcess.StartInfo.Arguments = Videos[i] + " -x --audio-format mp3 -o \"" + OutputPath + Title + ".mp3\"";
+
                         DownloadProcess.Start();
                         while (!DownloadProcess.HasExited) { }
+
+                        Log("\r\nVideo downloaded/converted successfully!");
                         DownloadedVideosInfo += Title + "\n   URL: " + Videos[i];
+
                         DownloadedVideos++;
                         DownloadProgressBar.Value++;
-                        DownloadingText.Text = "Descargando...\n" + (i + 2) + "/" + Videos.Length;
+                        DownloadingText.Text = (i + 1) + "/" + Videos.Length;
                     }
+                    Log("Vídeos downloaded " + ((MP3CheckBox.Checked) ? "and converted to .mp3 " : "") + "successfully: " + DownloadedVideos + "/" + Videos.Length + "\r\n");
+                    MessageBox.Show("Vídeos descargados " + ((MP3CheckBox.Checked) ? "y convertidos a .mp3 " : "") + "con éxito: " + DownloadedVideos + "/" + Videos.Length + "\n-----------------------------------" + DownloadedVideosInfo, "Vídeos descargados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                Log("\r\nError during download process: " + ex.Message);
-                MessageBox.Show("ERROR\n" + ex.Message + "\n\n" + ex.Data,
+                Log("\r\n[ERROR] Error during download process: " + ex.Message);
+                MessageBox.Show("Error during download process:\n\n" + ex.ToString(),
                     ex.Source, MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-                Download.Text = "Descargar";
-                Download.Enabled = true;
-                DownloadProgressBar.Value = 0;
-                DownloadingText.Text = "Descargando...\n1/" + Videos.Length;
-            }
-            MessageBox.Show("Vídeos descargados con éxito: " + DownloadedVideos + "/" + Videos.Length + "\n-----------------------------------" + DownloadedVideosInfo, "Vídeos descargados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Cursor.Current = Cursors.Default;
+            Download.Text = "Descargar";
+            Download.Enabled = true;
+            DownloadProgressBar.Value = 0;
+            DownloadingText.Text = "--/--";
             if (OpenAtEndCheckBox.Checked)
                 Process.Start("explorer.exe", OutputPath);
         }

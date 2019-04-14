@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -174,7 +174,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="YTDLLink.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -201,7 +201,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;YTDLLink.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -228,7 +228,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -255,7 +255,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="SourceLinkLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -282,16 +282,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SourceLinkLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="LogCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LogCheckBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="LogCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 139</value>
+    <value>17, 144</value>
   </data>
   <data name="LogCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 30</value>
@@ -316,7 +313,7 @@ un archivo (log.txt)</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;LogCheckBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,13 +343,17 @@ un archivo (log.txt)</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ExitButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="ExitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>197, 146</value>
+    <value>162, 160</value>
   </data>
   <data name="ExitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>110, 23</value>
   </data>
   <data name="ExitButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -370,7 +371,7 @@ un archivo (log.txt)</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ExitButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="VersionLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -397,6 +398,33 @@ un archivo (log.txt)</value>
     <value>$this</value>
   </data>
   <data name="&gt;&gt;VersionLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="DeleteLogsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="DeleteLogsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 134</value>
+  </data>
+  <data name="DeleteLogsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 23</value>
+  </data>
+  <data name="DeleteLogsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DeleteLogsButton.Text" xml:space="preserve">
+    <value>Eliminar registros</value>
+  </data>
+  <data name="&gt;&gt;DeleteLogsButton.Name" xml:space="preserve">
+    <value>DeleteLogsButton</value>
+  </data>
+  <data name="&gt;&gt;DeleteLogsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;DeleteLogsButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;DeleteLogsButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -406,7 +434,7 @@ un archivo (log.txt)</value>
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>284, 181</value>
+    <value>284, 196</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
