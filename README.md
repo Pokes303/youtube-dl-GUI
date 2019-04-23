@@ -13,7 +13,8 @@ Export text files with URLs from a YouTube Playlist or Channel
 1.0 # Initial release  
   
 1.1 # MP3 Support added  
- -Now you can download your videos in .mp3<br/>
+ -Now you can download your videos in .mp3
+
  -Log system has been fixed and activated<br/>
  -You can delete, activate or desactivate logs<br/>
  -Deleted title message<br/>
