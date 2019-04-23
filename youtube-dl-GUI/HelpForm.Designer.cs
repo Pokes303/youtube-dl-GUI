@@ -1,4 +1,4 @@
-﻿namespace YT_Downloader_GUI
+﻿namespace youtube_dl_GUI
 {
     partial class HelpForm
     {
@@ -40,6 +40,9 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.VersionLabel = new System.Windows.Forms.Label();
             this.DeleteLogsButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.FlaticonLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -110,15 +113,35 @@
             this.DeleteLogsButton.UseVisualStyleBackColor = true;
             this.DeleteLogsButton.Click += new System.EventHandler(this.DeleteLogsButton_Click);
             // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // FlaticonLinkLabel
+            // 
+            resources.ApplyResources(this.FlaticonLinkLabel, "FlaticonLinkLabel");
+            this.FlaticonLinkLabel.Name = "FlaticonLinkLabel";
+            this.FlaticonLinkLabel.TabStop = true;
+            this.FlaticonLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.FlaticonLinkLabel_LinkClicked);
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
             // HelpForm
             // 
             this.AcceptButton = this.ExitButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.DeleteLogsButton);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.LogCheckBox);
+            this.Controls.Add(this.FlaticonLinkLabel);
             this.Controls.Add(this.SourceLinkLabel);
             this.Controls.Add(this.YTDLLink);
             this.Controls.Add(this.label5);
@@ -145,5 +168,8 @@
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label VersionLabel;
         private System.Windows.Forms.Button DeleteLogsButton;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.LinkLabel FlaticonLinkLabel;
+        private System.Windows.Forms.Label label7;
     }
 }

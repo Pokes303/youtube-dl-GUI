@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-namespace YT_Downloader_GUI
+namespace youtube_dl_GUI
 {
     public partial class HelpForm : Form
     {
@@ -26,6 +26,11 @@ namespace YT_Downloader_GUI
         private void YTDLLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://ytdl-org.github.io/youtube-dl/index.html");
+        }
+
+        private void FlaticonLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.flaticon.com");
         }
 
         private void SourceLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

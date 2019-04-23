@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace YT_Downloader_GUI
+namespace youtube_dl_GUI
 {
     static class Program
     {

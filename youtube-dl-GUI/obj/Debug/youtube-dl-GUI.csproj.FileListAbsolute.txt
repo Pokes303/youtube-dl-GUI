@@ -1,8 +1,5 @@
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube-dl-GUI.csprojAssemblyReference.cache
-C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\YT_Downloader_GUI.Form1.resources
-C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\YT_Downloader_GUI.HelpForm.resources
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube_dl_GUI.Properties.Resources.resources
-C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\YT_Downloader_GUI.HelpForm.es.resources
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube-dl-GUI.csproj.GenerateResource.cache
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube-dl-GUI.csproj.CoreCompileInputs.cache
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\bin\Debug\youtube-dl-GUI.exe.config
@@ -12,3 +9,7 @@ C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\bin\Debug\es\youtube-dl
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\es\youtube-dl-GUI.resources.dll
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube-dl-GUI.exe
 C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube-dl-GUI.pdb
+C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube_dl_GUI.DownloadResultForm.resources
+C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube_dl_GUI.Form1.resources
+C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube_dl_GUI.HelpForm.resources
+C:\Users\Jose\source\repos\youtube-dl-GUI\youtube-dl-GUI\obj\Debug\youtube_dl_GUI.HelpForm.es.resources
