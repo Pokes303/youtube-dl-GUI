@@ -20,10 +20,11 @@ Download videos, playlists or channels from YouTube. Based on youtube-dl script:
  -Add video metadata to the .mp4 or .mp3 file\
  -New Download Result tab with some info about the videos and download process\
  -Export video URLs from a playlist/channel\
-1.0 # Initial release\
-\
+ \
 1.1 # MP3 Support added\
  -Download your videos in .mp3\
  -Log system has been fixed and activated\
  -Delete, activate or deactivate logs\
- -Deleted title message
+ -Deleted title message\
+\
+1.0 # Initial release\
