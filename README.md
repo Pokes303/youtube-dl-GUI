@@ -22,7 +22,8 @@ Download videos, playlists or channels from YouTube. Based on youtube-dl script:
 \
 1.0 # Initial release
 # Screenshots
-Some screenshots of the application\\
+Some screenshots of the application\
+
 ![youtube-dl videos](https://user-images.githubusercontent.com/24766260/56609741-26eaad00-660e-11e9-99a2-4e55dbaf3035.png)
 ![youtube-dl playlist](https://user-images.githubusercontent.com/24766260/56609742-26eaad00-660e-11e9-8fd9-db31bdf7c9fb.png)
 ![youtube-dl resut](https://user-images.githubusercontent.com/24766260/56609740-26eaad00-660e-11e9-9693-55a98ae66d3f.png)
