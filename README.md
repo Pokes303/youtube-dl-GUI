@@ -10,10 +10,10 @@ Export text files with URLs from a YouTube Playlist or Channel
 ![youtube-dl playlist](https://user-images.githubusercontent.com/24766260/56608349-e2a9dd80-660a-11e9-9e87-84151b43b060.png)
 
 # Changelog
-1.0 - Initial release  
+1.0 # Initial release  
   
-1.1 - MP3 Support added  
-  -Now you can download your videos in .mp3  
-  -Log system has been fixed and activated  
-  -You can delete, activate or desactivate logs  
-  -Deleted title message  
+1.1 # MP3 Support added  
+ -Now you can download your videos in .mp3  
+ -Log system has been fixed and activated  
+ -You can delete, activate or desactivate logs  
+ -Deleted title message  
