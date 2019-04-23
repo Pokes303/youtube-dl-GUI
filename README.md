@@ -4,8 +4,7 @@ Download videos, playlists or channels from YouTube. Based on youtube-dl script:
 ·Import/export text files with URLs from YouTube videos to download them fast at the same time\
 ·Download videos as .mp3 sound files\
 ·Add metadata to .mp4 or .mp3 files with some info of the video\
-·Export text files with URLs from a YouTube Playlist or Channel\
-\
+·Export text files with URLs from a YouTube Playlist or Channel
 # Changelog
 2.0 # Download playlist/channel videos added\
  -Download videos from public playlists/channels!\
@@ -21,9 +20,9 @@ Download videos, playlists or channels from YouTube. Based on youtube-dl script:
  -Delete, activate or deactivate logs\
  -Deleted title message\
 \
-1.0 # Initial release\
+1.0 # Initial release
 # Screenshots
-Some screenshots of the application\
+Some screenshots of the application\\
 ![youtube-dl videos](https://user-images.githubusercontent.com/24766260/56609741-26eaad00-660e-11e9-99a2-4e55dbaf3035.png)
 ![youtube-dl playlist](https://user-images.githubusercontent.com/24766260/56609742-26eaad00-660e-11e9-8fd9-db31bdf7c9fb.png)
 ![youtube-dl resut](https://user-images.githubusercontent.com/24766260/56609740-26eaad00-660e-11e9-9693-55a98ae66d3f.png)
