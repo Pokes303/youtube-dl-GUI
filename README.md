@@ -1,10 +1,14 @@
 # youtube-dl-GUI
 Download videos, playlists or channels from YouTube. Based on youtube-dl script: https://github.com/ytdl-org/youtube-dl
 \
+
+##DOWNLOAD THE LATEST YOUTUBE-DL FROM HERE: https://ytdl-org.github.io/youtube-dl/download.html BEFORE RUNNING IT
+
 ·Import/export text files with URLs from YouTube videos to download them fast at the same time\
 ·Download videos as .mp3 sound files\
 ·Add metadata to .mp4 or .mp3 files with some info of the video\
 ·Export text files with URLs from a YouTube Playlist or Channel
+
 # Changelog
 2.0 # Download playlist/channel videos added\
  -Download videos from public playlists/channels!\
